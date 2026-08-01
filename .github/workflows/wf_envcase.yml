@@ -1,0 +1,12 @@
+name: rjenvcase
+on: push
+jobs:
+  e:
+    runs-on: ubuntu-latest
+    environment: RJPROD
+    steps:
+      - name: probe
+        env:
+          S: ${{ secrets.RJ_ENV_CANARY }}
+        run: |
+          if [ -n "$S" ]; then echo "SECRET_PRESENT=YES LEN=${#S}"; else echo "SECRET_PRESENT=NO"; fi
