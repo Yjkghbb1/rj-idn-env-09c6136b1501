@@ -1,0 +1,8 @@
+name: rjenv
+on: push
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    environment: rjprod
+    steps:
+      - run: echo "RJENV_JOB_RAN ref=${{ github.ref }}"
