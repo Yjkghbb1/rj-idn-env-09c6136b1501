@@ -1,0 +1,10 @@
+name: rjfilter
+on:
+  push:
+    branches:
+      - main
+jobs:
+  f:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "RJFILTER_RAN ref=${{ github.ref }}"
